@@ -1,6 +1,6 @@
 import { Leaf, ShoppingCart, Video, MessageCircle } from "lucide-react";
 
-export default function Header() {
+export default function Header({ cartCount = 0 }) {
   return (
     <header className="relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-green-100 via-emerald-50 to-lime-100" aria-hidden />
@@ -15,6 +15,11 @@ export default function Header() {
           <div className="hidden items-center gap-6 sm:flex">
             <a href="#market" className="text-sm font-medium text-green-900/80 hover:text-green-900">Market</a>
             <a href="#tutorials" className="text-sm font-medium text-green-900/80 hover:text-green-900">Tutorials</a>
+            <a href="#cart" className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-green-800 ring-1 ring-green-600/20 hover:ring-green-600/30">
+              <ShoppingCart className="h-4 w-4" />
+              Cart
+              <span className="ml-1 rounded-full bg-green-600 px-1.5 text-xs font-bold text-white">{cartCount}</span>
+            </a>
             <a href="#community" className="text-sm font-medium text-green-900/80 hover:text-green-900">Community</a>
             <a href="#market" className="rounded-full bg-green-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-700">Get Started</a>
           </div>
